@@ -28,7 +28,7 @@ export default function App() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [page]);
+  }, []);
 
   const renderPage = () => {
     switch (page) {

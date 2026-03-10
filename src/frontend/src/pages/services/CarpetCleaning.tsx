@@ -106,9 +106,9 @@ export default function CarpetCleaning({ navigate }: Props) {
                 "Carpets dry in 3–6 hours",
                 "REINSW standard — satisfies property managers",
                 "Safe for kids and pets",
-              ].map((item, i) => (
+              ].map((item) => (
                 <li
-                  key={i}
+                  key={item}
                   className="flex items-start gap-2 text-sm text-gray-700"
                 >
                   <CheckCircle className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />

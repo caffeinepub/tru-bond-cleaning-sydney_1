@@ -104,9 +104,9 @@ export default function WindowCleaning({ navigate }: Props) {
                 "Mirrors polished streak-free",
                 "Balcony door glass cleaned",
                 "Extension poles for upper-floor windows",
-              ].map((item, i) => (
+              ].map((item) => (
                 <li
-                  key={i}
+                  key={item}
                   className="flex items-start gap-2 text-sm text-gray-700"
                 >
                   <CheckCircle className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />

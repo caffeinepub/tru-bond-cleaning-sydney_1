@@ -51,8 +51,8 @@ export default function About() {
               "Fixed pricing — no hidden fees",
               "Available 7 days, all Sydney suburbs",
               "Free re-clean within 72 hours if needed",
-            ].map((point, i) => (
-              <div key={i} className="flex items-center gap-3">
+            ].map((point) => (
+              <div key={point} className="flex items-center gap-3">
                 <CheckCircle className="w-5 h-5 text-green-500 shrink-0" />
                 <span className="text-gray-700 text-sm">{point}</span>
               </div>

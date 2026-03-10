@@ -26,6 +26,7 @@ export default function Header({ navigate, currentPage }: HeaderProps) {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <button
+            type="button"
             onClick={() => navigate("home")}
             className="flex flex-col leading-tight"
           >
@@ -40,6 +41,7 @@ export default function Header({ navigate, currentPage }: HeaderProps) {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
             <button
+              type="button"
               data-ocid="nav.link"
               onClick={() => navigate("home")}
               className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
@@ -53,6 +55,7 @@ export default function Header({ navigate, currentPage }: HeaderProps) {
 
             <div className="relative">
               <button
+                type="button"
                 data-ocid="nav.link"
                 onClick={() => setServicesOpen(!servicesOpen)}
                 onBlur={() => setTimeout(() => setServicesOpen(false), 150)}
@@ -74,6 +77,7 @@ export default function Header({ navigate, currentPage }: HeaderProps) {
               {servicesOpen && (
                 <div className="absolute top-full left-0 mt-1 w-52 bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50">
                   <button
+                    type="button"
                     onClick={() => {
                       navigate("services");
                       setServicesOpen(false);
@@ -84,6 +88,7 @@ export default function Header({ navigate, currentPage }: HeaderProps) {
                   </button>
                   {services.map((s) => (
                     <button
+                      type="button"
                       key={s.page}
                       onClick={() => {
                         navigate(s.page);
@@ -99,6 +104,7 @@ export default function Header({ navigate, currentPage }: HeaderProps) {
             </div>
 
             <button
+              type="button"
               data-ocid="nav.link"
               onClick={() => navigate("about")}
               className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
@@ -110,6 +116,7 @@ export default function Header({ navigate, currentPage }: HeaderProps) {
               About
             </button>
             <button
+              type="button"
               data-ocid="nav.link"
               onClick={() => navigate("contact")}
               className={`px-4 py-2 text-sm font-medium rounded-md transition-colors ${
@@ -131,6 +138,7 @@ export default function Header({ navigate, currentPage }: HeaderProps) {
 
           {/* Mobile menu button */}
           <button
+            type="button"
             className="md:hidden p-2 rounded-md text-gray-700"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
@@ -154,6 +162,7 @@ export default function Header({ navigate, currentPage }: HeaderProps) {
             { label: "Contact", page: "contact" as Page },
           ].map((item) => (
             <button
+              type="button"
               key={item.page}
               data-ocid="nav.link"
               onClick={() => {

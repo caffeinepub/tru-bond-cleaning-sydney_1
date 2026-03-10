@@ -256,8 +256,8 @@ export default function Home({ navigate }: HomeProps) {
                 icon: <Leaf className="w-6 h-6 text-emerald-600" />,
                 text: "Eco-Friendly Products",
               },
-            ].map((badge, i) => (
-              <div key={i} className="flex items-center gap-3">
+            ].map((badge) => (
+              <div key={badge.text} className="flex items-center gap-3">
                 <div className="shrink-0">{badge.icon}</div>
                 <span className="text-sm font-semibold text-gray-700">
                   {badge.text}
@@ -283,6 +283,7 @@ export default function Home({ navigate }: HomeProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
               <button
+                type="button"
                 key={service.page + service.title}
                 onClick={() => navigate(service.page)}
                 className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-gray-100 text-left"
@@ -344,8 +345,8 @@ export default function Home({ navigate }: HomeProps) {
                     title: "All Sydney Suburbs Covered",
                     desc: "CBD, Northern Beaches, Parramatta, Sutherland, Inner West — we go anywhere.",
                   },
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-3">
+                ].map((item) => (
+                  <div key={item.title} className="flex gap-3">
                     <div className="shrink-0 mt-0.5">{item.icon}</div>
                     <div>
                       <div className="font-semibold text-gray-900">
@@ -406,12 +407,15 @@ export default function Home({ navigate }: HomeProps) {
                 suburb: "Chatswood",
                 text: "Booked online, easy process, cleaners were on time and professional. Got my full bond back without any issues. Will use again!",
               },
-            ].map((review, i) => (
-              <div key={i} className="bg-white rounded-xl p-6 shadow-sm">
+            ].map((review) => (
+              <div
+                key={review.suburb}
+                className="bg-white rounded-xl p-6 shadow-sm"
+              >
                 <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, j) => (
+                  {[1, 2, 3, 4, 5].map((n) => (
                     <Star
-                      key={j}
+                      key={n}
                       className="w-4 h-4 text-yellow-400 fill-yellow-400"
                     />
                   ))}
@@ -458,8 +462,11 @@ export default function Home({ navigate }: HomeProps) {
                 desc: "House or townhouse",
               },
               { size: "4+ Bedroom", price: "From $550", desc: "Large home" },
-            ].map((tier, i) => (
-              <div key={i} className="bg-blue-50 rounded-xl p-5 text-center">
+            ].map((tier) => (
+              <div
+                key={tier.size}
+                className="bg-blue-50 rounded-xl p-5 text-center"
+              >
                 <div className="font-bold text-gray-900 mb-1">{tier.size}</div>
                 <div className="text-2xl font-extrabold text-blue-700 mb-1">
                   {tier.price}
@@ -472,6 +479,7 @@ export default function Home({ navigate }: HomeProps) {
             Carpet cleaning, pest control, and external window cleaning may be
             priced separately.{" "}
             <button
+              type="button"
               onClick={() => navigate("contact")}
               className="text-blue-600 underline"
             >
@@ -495,11 +503,12 @@ export default function Home({ navigate }: HomeProps) {
           <div className="space-y-3">
             {faqs.map((faq, i) => (
               <div
-                key={i}
+                key={faq.q}
                 data-ocid={`faq.item.${i + 1}`}
                 className="bg-white rounded-xl border border-gray-200 overflow-hidden"
               >
                 <button
+                  type="button"
                   className="w-full text-left px-6 py-5 flex items-start justify-between gap-4"
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 >
@@ -518,7 +527,7 @@ export default function Home({ navigate }: HomeProps) {
                       <div className="space-y-4">
                         {companies.map((c, ci) => (
                           <div
-                            key={ci}
+                            key={c.name}
                             className={`p-4 rounded-lg border ${c.highlight ? "border-blue-300 bg-blue-50" : "border-gray-200 bg-gray-50"}`}
                           >
                             <div className="flex items-start justify-between gap-4 mb-2">
@@ -548,9 +557,9 @@ export default function Home({ navigate }: HomeProps) {
                           Here are the best products and tools:
                         </p>
                         <ul className="space-y-2">
-                          {carpetProducts.map((p, pi) => (
+                          {carpetProducts.map((p) => (
                             <li
-                              key={pi}
+                              key={p.name}
                               className="flex items-start gap-2 text-sm"
                             >
                               <CheckCircle className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />

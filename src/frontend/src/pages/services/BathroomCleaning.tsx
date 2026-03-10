@@ -110,9 +110,9 @@ export default function BathroomCleaning({ navigate }: Props) {
                 "Exhaust fan cleaned",
                 "Floor tiles scrubbed and mopped",
                 "Behind toilet and corners checked",
-              ].map((item, i) => (
+              ].map((item) => (
                 <li
-                  key={i}
+                  key={item}
                   className="flex items-start gap-2 text-sm text-gray-700"
                 >
                   <CheckCircle className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />

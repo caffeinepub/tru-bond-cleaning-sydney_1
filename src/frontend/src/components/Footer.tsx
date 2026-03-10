@@ -52,6 +52,7 @@ export default function Footer({ navigate }: FooterProps) {
               ].map((item) => (
                 <li key={item.page}>
                   <button
+                    type="button"
                     onClick={() => navigate(item.page)}
                     className="hover:text-white hover:underline transition-colors"
                   >
@@ -78,6 +79,7 @@ export default function Footer({ navigate }: FooterProps) {
               ].map((item) => (
                 <li key={item.page}>
                   <button
+                    type="button"
                     onClick={() => navigate(item.page)}
                     className="hover:text-white hover:underline transition-colors"
                   >

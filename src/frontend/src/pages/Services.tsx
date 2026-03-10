@@ -90,6 +90,7 @@ export default function Services({ navigate }: ServicesProps) {
                 {service.price}
               </div>
               <button
+                type="button"
                 onClick={() => navigate(service.page)}
                 className="w-full bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 rounded-md text-sm transition-colors"
               >
