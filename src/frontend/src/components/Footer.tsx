@@ -6,6 +6,24 @@ interface FooterProps {
 }
 
 export default function Footer({ navigate }: FooterProps) {
+  const suburbs: { label: string; page: Page }[] = [
+    { label: "Bond Cleaning Bondi", page: "bondi" },
+    { label: "Bond Cleaning Parramatta", page: "parramatta" },
+    { label: "Bond Cleaning Chatswood", page: "chatswood" },
+    { label: "Bond Cleaning Manly", page: "manly" },
+    { label: "Bond Cleaning Hurstville", page: "hurstville" },
+    { label: "Bond Cleaning Newtown", page: "newtown" },
+    { label: "Bond Cleaning Randwick", page: "randwick" },
+    { label: "Bond Cleaning Cronulla", page: "cronulla" },
+    { label: "Bond Cleaning Strathfield", page: "strathfield" },
+    { label: "Bond Cleaning Penrith", page: "penrith" },
+    { label: "Bond Cleaning Castle Hill", page: "castle-hill" },
+    { label: "Bond Cleaning Liverpool", page: "liverpool" },
+    { label: "Bond Cleaning Kogarah", page: "kogarah" },
+    { label: "Bond Cleaning Burwood", page: "burwood" },
+    { label: "Bond Cleaning Pymble", page: "pymble" },
+  ];
+
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -40,29 +58,6 @@ export default function Footer({ navigate }: FooterProps) {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold text-white mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              {[
-                { label: "Home", page: "home" as Page },
-                { label: "Services", page: "services" as Page },
-                { label: "About Us", page: "about" as Page },
-                { label: "Contact", page: "contact" as Page },
-              ].map((item) => (
-                <li key={item.page}>
-                  <button
-                    type="button"
-                    onClick={() => navigate(item.page)}
-                    className="hover:text-white hover:underline transition-colors"
-                  >
-                    {item.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Services */}
           <div>
             <h4 className="font-semibold text-white mb-4">Our Services</h4>
@@ -90,36 +85,63 @@ export default function Footer({ navigate }: FooterProps) {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Suburbs */}
           <div>
-            <h4 className="font-semibold text-white mb-4">Contact Us</h4>
-            <ul className="space-y-3 text-sm">
+            <h4 className="font-semibold text-white mb-4">Sydney Suburbs</h4>
+            <ul className="space-y-1 text-sm">
+              {suburbs.slice(0, 8).map((item) => (
+                <li key={item.page}>
+                  <button
+                    type="button"
+                    onClick={() => navigate(item.page)}
+                    className="hover:text-white hover:underline transition-colors text-xs"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* More Suburbs + Contact */}
+          <div>
+            <h4 className="font-semibold text-white mb-4">More Suburbs</h4>
+            <ul className="space-y-1 text-sm mb-4">
+              {suburbs.slice(8).map((item) => (
+                <li key={item.page}>
+                  <button
+                    type="button"
+                    onClick={() => navigate(item.page)}
+                    className="hover:text-white hover:underline transition-colors text-xs"
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <h4 className="font-semibold text-white mb-2">Contact</h4>
+            <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href="https://wa.me/61488841883"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 hover:text-white transition-colors"
+                  className="flex items-center gap-2 hover:text-white"
                 >
-                  <MessageCircle className="w-4 h-4 text-green-400 shrink-0" />
+                  <MessageCircle className="w-4 h-4 text-green-400 shrink-0" />{" "}
                   WhatsApp: 0488 841 883
                 </a>
               </li>
               <li>
                 <a
                   href="tel:0488841883"
-                  className="flex items-center gap-2 hover:text-white transition-colors"
+                  className="flex items-center gap-2 hover:text-white"
                 >
-                  <Phone className="w-4 h-4 text-blue-400 shrink-0" />
-                  0488 841 883
+                  <Phone className="w-4 h-4 text-blue-400 shrink-0" /> 0488 841
+                  883
                 </a>
               </li>
-              <li className="text-gray-400">
-                Available 7 days a week
-                <br />
-                7am – 8pm
-              </li>
-              <li className="text-gray-400">All Sydney Suburbs</li>
+              <li className="text-gray-400">7 days, 7am – 8pm</li>
             </ul>
           </div>
         </div>

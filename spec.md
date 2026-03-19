@@ -1,35 +1,24 @@
 # Tru Bond Cleaning Sydney
 
 ## Current State
-New project. No existing code.
+Site has homepage, 5 service pages, About, Contact, Header, Footer, WhatsAppButton. No suburb pages exist. Service pages exist but need more content and images. App.tsx routes only to existing pages.
 
 ## Requested Changes (Diff)
 
 ### Add
-- Full multi-page website for Tru Bond Cleaning Sydney
-- Pages: Home, Services, About, Contact, individual service pages
-- 3000+ word SEO-optimised content in Australian English, active voice, simple language
-- Each service page: ~400 words description
-- FAQ section on homepage with 12 detailed questions/answers
-- Top 5 bond cleaning companies list (Tru Bond Cleaning at #5)
-- Contact form that opens customer's email client pre-filled with form data, sending to humptydumptybondcleaning@gmail.com (email hidden from site)
-- WhatsApp contact button: 0488841883
-- Branded images on every page with alt text for SEO
-- Meta title, description, keywords, Open Graph tags on every page
-- Google Site Verification meta tag in <head>
-- Carpet cleaning product links/recommendations
-- Bond cleaning product recommendations
+- 15 suburb pages: Bondi, Parramatta, Chatswood, Manly, Hurstville, Newtown, Randwick, Cronulla, Strathfield, Penrith, Castle Hill, Liverpool, Kogarah, Burwood, Pymble
+- Each suburb page: ~1000 words, E-E-A-T content, unique branded image with alt text, meta title + description
+- New branded images for each suburb (already generated)
+- Internal links from homepage to all suburb pages
 
 ### Modify
-- N/A
+- App.tsx: add suburb page types and routes
+- Home.tsx: add suburb links section
 
 ### Remove
-- N/A
+- Nothing removed
 
 ## Implementation Plan
-1. Backend: minimal canister (no backend data needed, contact form uses mailto)
-2. Frontend pages: Home, Services (overview + individual), About, Contact
-3. SEO: meta tags per page, structured data, Google verification tag
-4. Contact form: mailto link that opens customer email with pre-filled content
-5. WhatsApp floating button
-6. Images: hero, services, team, trust badges with branding
+1. Write all 15 suburb page components
+2. Update App.tsx with new page types and routes
+3. Update Home.tsx to include suburb links section

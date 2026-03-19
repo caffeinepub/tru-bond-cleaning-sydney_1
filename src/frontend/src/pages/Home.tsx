@@ -490,6 +490,133 @@ export default function Home({ navigate }: HomeProps) {
         </div>
       </section>
 
+      {/* Suburb Pages */}
+      <section className="bg-blue-900 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-extrabold text-center mb-4">
+            Bond Cleaning Sydney u2014 All Suburbs
+          </h2>
+          <p className="text-blue-200 text-center mb-10 max-w-2xl mx-auto">
+            We service every corner of Sydney. Click your suburb for local tips,
+            pricing, and specialist bond cleaning information.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+            {(
+              [
+                {
+                  label: "Bondi",
+                  page: "bondi",
+                  img: "/assets/generated/suburb-bondi.dim_800x500.jpg",
+                  alt: "Bond cleaning Bondi Sydney",
+                },
+                {
+                  label: "Parramatta",
+                  page: "parramatta",
+                  img: "/assets/generated/suburb-parramatta.dim_800x500.jpg",
+                  alt: "Bond cleaning Parramatta Sydney",
+                },
+                {
+                  label: "Chatswood",
+                  page: "chatswood",
+                  img: "/assets/generated/suburb-chatswood.dim_800x500.jpg",
+                  alt: "Bond cleaning Chatswood Sydney",
+                },
+                {
+                  label: "Manly",
+                  page: "manly",
+                  img: "/assets/generated/suburb-manly.dim_800x500.jpg",
+                  alt: "Bond cleaning Manly Sydney",
+                },
+                {
+                  label: "Hurstville",
+                  page: "hurstville",
+                  img: "/assets/generated/suburb-hurstville.dim_800x500.jpg",
+                  alt: "Bond cleaning Hurstville Sydney",
+                },
+                {
+                  label: "Newtown",
+                  page: "newtown",
+                  img: "/assets/generated/suburb-newtown.dim_800x500.jpg",
+                  alt: "Bond cleaning Newtown Sydney",
+                },
+                {
+                  label: "Randwick",
+                  page: "randwick",
+                  img: "/assets/generated/suburb-randwick.dim_800x500.jpg",
+                  alt: "Bond cleaning Randwick Sydney",
+                },
+                {
+                  label: "Cronulla",
+                  page: "cronulla",
+                  img: "/assets/generated/suburb-cronulla.dim_800x500.jpg",
+                  alt: "Bond cleaning Cronulla Sydney",
+                },
+                {
+                  label: "Strathfield",
+                  page: "strathfield",
+                  img: "/assets/generated/suburb-strathfield.dim_800x500.jpg",
+                  alt: "Bond cleaning Strathfield Sydney",
+                },
+                {
+                  label: "Penrith",
+                  page: "penrith",
+                  img: "/assets/generated/suburb-penrith.dim_800x500.jpg",
+                  alt: "Bond cleaning Penrith Sydney",
+                },
+                {
+                  label: "Castle Hill",
+                  page: "castle-hill",
+                  img: "/assets/generated/suburb-castle-hill.dim_800x500.jpg",
+                  alt: "Bond cleaning Castle Hill Sydney",
+                },
+                {
+                  label: "Liverpool",
+                  page: "liverpool",
+                  img: "/assets/generated/suburb-liverpool.dim_800x500.jpg",
+                  alt: "Bond cleaning Liverpool Sydney",
+                },
+                {
+                  label: "Kogarah",
+                  page: "kogarah",
+                  img: "/assets/generated/suburb-kogarah.dim_800x500.jpg",
+                  alt: "Bond cleaning Kogarah Sydney",
+                },
+                {
+                  label: "Burwood",
+                  page: "burwood",
+                  img: "/assets/generated/suburb-burwood.dim_800x500.jpg",
+                  alt: "Bond cleaning Burwood Sydney",
+                },
+                {
+                  label: "Pymble",
+                  page: "pymble",
+                  img: "/assets/generated/suburb-pymble.dim_800x500.jpg",
+                  alt: "Bond cleaning Pymble Sydney",
+                },
+              ] as { label: string; page: Page; img: string; alt: string }[]
+            ).map((s) => (
+              <button
+                type="button"
+                key={s.page}
+                onClick={() => navigate(s.page as Page)}
+                className="group relative rounded-xl overflow-hidden aspect-video bg-blue-800 hover:ring-2 hover:ring-yellow-400 transition-all"
+              >
+                <img
+                  src={s.img}
+                  alt={s.alt}
+                  className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity"
+                />
+                <div className="absolute inset-0 flex items-end p-2">
+                  <span className="text-white font-bold text-xs bg-blue-900/70 px-2 py-1 rounded">
+                    {s.label}
+                  </span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
