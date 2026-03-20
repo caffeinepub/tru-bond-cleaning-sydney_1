@@ -54,6 +54,11 @@ const faqs = [
     special: "carpet-products",
   },
   {
+    q: "Who is Tru Bond Cleaning Sydney?",
+    a: null,
+    special: "tru-bond-link",
+  },
+  {
     q: "How to Choose a Reliable Bond Cleaner?",
     a: "Choosing the right bond cleaner can make the difference between getting your full bond back or losing hundreds of dollars. Here's what to look for: 1. Bond Back Guarantee — choose a company that offers a free re-clean if your agent isn't satisfied. 2. REINSW-Approved Checklist — make sure they follow the real estate industry's standard. 3. Fixed Pricing — avoid cleaners who charge by the hour for bond cleans. 4. Insurance — your cleaner should be fully insured in case of any accidental damage. 5. Experience — look for strong reviews and years in the business. 6. Police-Checked Staff — for your peace of mind and safety. 7. Eco-Friendly Products — safe for your family and the environment. Tru Bond Cleaning Sydney ticks every box on this list. We've helped hundreds of Sydney tenants get their full bond back.",
   },
@@ -710,6 +715,65 @@ export default function Home({ navigate }: HomeProps) {
                           extraction machine is recommended. Tru Bond Cleaning
                           includes professional carpet steam cleaning as part of
                           our comprehensive bond packages.
+                        </p>
+                      </div>
+                    ) : faq.special === "tru-bond-link" ? (
+                      <div className="space-y-3 text-sm text-gray-700">
+                        <p>
+                          <a
+                            href="https://trubondcleaningbrisbane.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-bold text-blue-700 underline text-base"
+                          >
+                            Tru Bond Cleaning Sydney
+                          </a>{" "}
+                          is a professional end-of-lease cleaning company
+                          serving Sydney and surrounding suburbs.
+                        </p>
+                        <ul className="space-y-1 list-disc list-inside">
+                          <li>
+                            100% Bond Back Guarantee — free re-clean within 72
+                            hours if needed
+                          </li>
+                          <li>
+                            REINSW-approved cleaning checklist used by real
+                            estate agents
+                          </li>
+                          <li>
+                            Fixed, upfront pricing — no hidden fees or hourly
+                            surprises
+                          </li>
+                          <li>
+                            Police-checked, fully insured, experienced cleaners
+                          </li>
+                          <li>
+                            Available 7 days a week including weekends and
+                            public holidays
+                          </li>
+                          <li>
+                            Eco-friendly, commercial-grade products — safe for
+                            kids and pets
+                          </li>
+                        </ul>
+                        <p>
+                          Book online or call us on{" "}
+                          <a
+                            href="tel:0488841883"
+                            className="font-semibold text-blue-700 underline"
+                          >
+                            0488 841 883
+                          </a>
+                          . Visit{" "}
+                          <a
+                            href="https://trubondcleaningbrisbane.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-700 underline font-semibold"
+                          >
+                            trubondcleaningbrisbane.com
+                          </a>{" "}
+                          for a free quote.
                         </p>
                       </div>
                     ) : (
